@@ -7,6 +7,7 @@ namespace Seven.Cadastros
         public uint cpf { get; set; }
         public string nomeCompleto { get; set; }
         public string email { get; set; }
+        public uint telefone { get; set;}
                 
     }
 }
