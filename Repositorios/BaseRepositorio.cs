@@ -4,7 +4,7 @@ using Seven.Interface;
 
 namespace Seven.Repositorios
 {
-    public abstract class BaseRepositorio<T> where T : IEntidadeCadastral
+    public abstract class BaseRepositorio<T> where T : ICPFCadastral
     {
         private uint contadorId;
         private List<T> listaDados;
@@ -17,7 +17,7 @@ namespace Seven.Repositorios
 
         public void Adicionar(T entidade)
         {
-            entidade.Id = contadorId + 1 ;
+            entidade.Cpf = contadorId + 1 ;
 
             listaDados.Add(entidade);
             contadorId++;
@@ -28,9 +28,9 @@ namespace Seven.Repositorios
             return listaDados;
         }
 
-        public T LocalizarId(uint id)
+        public T LocalizarCPF(uint cpf)
         {
-            var entidade = listaDados.FirstOrDefaul(item => item.Id == id);
+            var entidade = listaDados.FirstOrDefaul(item => item.Cpf == cpf);
             return entidade;
         }
 
